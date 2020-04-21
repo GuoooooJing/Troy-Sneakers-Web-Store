@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="/common/header :: common-header" />
+
+<body>
+	<div th:replace="/common/header :: navbar" />
+
+	<div class="container">
+		<div class="row">
+			<div class="col-8">
+				<h2 class="section-headline" style="font-size:5rem;"><span>User Account</span></h2>
+			</div>
+			<div class="col-4">
+				<img src="/imgs/logo.png" class="img-fluid"/>
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<div class="col-9 col-offset-3">
+				<ul class="nav navtabs">
+					<li><span>Login</span></li>
+					<li><span>Login</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!--script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
+	</script>
+	<  script src="/js/vendor/popper.min.js"></script-->
+	<div th:replace="/common/header :: body-bottom-scripts" />
+</body>
+</html>
