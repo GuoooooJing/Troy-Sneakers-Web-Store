@@ -9,19 +9,75 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-8">
-				<h2 class="section-headline" style="font-size:5rem;"><span>User Account</span></h2>
+				<h2 class="section-headline" style="font-size: 5rem;">
+					<span>User Account</span>
+				</h2>
 			</div>
 			<div class="col-4">
-				<img src="/imgs/logo.png" class="img-fluid"/>
+				<img src="/imgs/logo.png" class="img-fluid" />
 			</div>
 		</div>
 		<hr />
 		<div class="row">
 			<div class="col-9 col-offset-3">
-				<ul class="nav navtabs">
-					<li><span>Login</span></li>
-					<li><span>Login</span></li>
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item"><a class="nav-link active" id="home-tab"
+						data-toggle="tab" href="#tab-1" role="tab" aria-controls="home"
+						aria-selected="true">Create Account</a></li>
+					<li class="nav-item"><a class="nav-link" id="profile-tab"
+						data-toggle="tab" href="#tab-2" role="tab"
+						aria-controls="profile" aria-selected="false">Login</a></li>
 				</ul>
+				<!--  crete account -->
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade show active" id="tab-1" role="tabpanel"
+						aria-labelledby="home-tab">
+						<div class="panel-group">
+							<div class="panel panel-default">
+								<div class="panel-body" style="background:#ededed; margin-top:20px;">
+									<form>
+										<div class="form-group">
+											<label for="newUsername">* Username</label>
+											<input required="required" type="text" class="form-control" id="newusername" name="username"/>
+											<p style="color:#828282">Enter your username here</p>
+										</div>
+										<div class="form-group">
+											<label for="email">* Email</label>
+											<input required="required" type="text" class="form-control" id="email" name="email"/>
+											<p style="color:#828282">Enter your email here</p>
+										</div>
+										<button type="submit" class="btn btn-primary">Create a new account</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tab-pane fade" id="tab-2" role="tabpanel"
+						aria-labelledby="profile-tab">
+						<div class="tab-pane fade show active" id="tab-1" role="tabpanel"
+						aria-labelledby="home-tab">
+						<div class="panel-group">
+							<div class="panel panel-default">
+								<div class="panel-body" style="background:#ededed; margin-top:20px;">
+									<form>
+										<div class="form-group">
+											<label for="newUsername">* Username</label>
+											<input required="required" type="text" class="form-control" id="newusername" name="username"/>
+											<p style="color:#828282">Enter your username here</p>
+										</div>
+										<div class="form-group">
+											<label for="email">* Password</label>
+											<input required="required" type="password" class="form-control" id="password" name="password"/>
+											<p style="color:#828282">Enter the password</p>
+										</div>
+										<button type="submit" class="btn btn-primary">Login</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
