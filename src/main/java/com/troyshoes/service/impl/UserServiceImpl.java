@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
 		User localUser = userRepository.findByUsername(user.getUsername());
 		
 		if(localUser != null) {
-				LOG.info("user already exists. Nothing will be done", user.getUsername());
+				LOG.info("user {} already exists. Nothing will be done", user.getUsername());
 			
 		}else {
 			for (UserRole ur : userRoles) {
@@ -69,5 +69,10 @@ public class UserServiceImpl implements UserService {
 			localUser = userRepository.save(user);
 		}
 		return localUser;
+	}
+	
+	@Override
+	public User save(User user) {
+		return userRepository.save(user);
 	}
 }

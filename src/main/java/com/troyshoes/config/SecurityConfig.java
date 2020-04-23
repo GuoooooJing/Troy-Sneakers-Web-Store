@@ -33,7 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			"/js/**",
 			"/imgs/**",
 			"/",
-			"/newUser"
+			"/newUser",
+			"/forgetPassword",
+			"/login"
 	};
 	
 	@Override
@@ -48,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.formLogin().failureUrl("/login?error").defaultSuccessUrl("/")
 			.loginPage("/login").permitAll()
 			.and()
-			.logout().logoutRequestMatcher(new AntPathRequestMatcher("logout"))
+			.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 			.logoutSuccessUrl("/?logout").deleteCookies("remember-me").permitAll()
 			.and()
 			.rememberMe();
