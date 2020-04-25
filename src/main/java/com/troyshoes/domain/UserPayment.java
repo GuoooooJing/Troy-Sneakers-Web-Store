@@ -18,6 +18,12 @@ public class UserPayment {
 	private String type;
 	private String cardName;
 	private String cardNumber;
+	private int expiryMonth;
+	private int expiryYear;
+	private int cvc;
+	private String holderName;
+	private boolean defaultPayment;
+	
 	public String getCardNumber() {
 		return cardNumber;
 	}
@@ -26,12 +32,6 @@ public class UserPayment {
 		this.cardNumber = cardNumber;
 	}
 
-	private int expiryMonth;
-	private int expiryYear;
-	private int cvc;
-	private String holderName;
-	private boolean defaultPayment;
-	
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user;

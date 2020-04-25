@@ -12,7 +12,7 @@ public class UserBilling {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 	private String userBillingName;
 	private String userBillingStreet1;
 	private String userBillingStreet2;
@@ -24,8 +24,14 @@ public class UserBilling {
 	@OneToOne(cascade = CascadeType.ALL)
 	private UserPayment userPayment;
 
-	public long getId() {
+
+
+	public Long getId() {
 		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public void setId(long id) {

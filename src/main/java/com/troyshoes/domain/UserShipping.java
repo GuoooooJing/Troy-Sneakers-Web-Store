@@ -12,7 +12,7 @@ public class UserShipping {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 	private String userShippingName;
 	private String userShippingStreet1;
 	private String userShippingStreet2;
@@ -20,15 +20,34 @@ public class UserShipping {
 	private String userShippingState;
 	private String userShippingCountry;
 	private String userShippingZipcode;
+	private boolean userShippingDefault;
 	
 	
+	public boolean isUserShippingDefault() {
+		return userShippingDefault;
+	}
+
+
+	public void setUserShippingDefault(boolean userShippingDeault) {
+		this.userShippingDefault = userShippingDeault;
+	}
+
+
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
 
 
-	public long getId() {
+
+
+
+	public Long getId() {
 		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 
