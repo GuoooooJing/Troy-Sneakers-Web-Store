@@ -79,13 +79,7 @@ public class HomeController {
 		return "myAccount";			
 	}
 	
-	@RequestMapping("/shoesbox")
-	public String shoesbox(Model model) {
-		List<Shoes> shoesList = shoesService.findAll();
-		model.addAttribute("shoesList", shoesList);
-		
-		return "shoesbox";
-	}
+	
 	
 	@RequestMapping("/forgetPassword")
 	public String forgetPassword(
@@ -466,6 +460,14 @@ public class HomeController {
 			
 			
 		}
+	}
+	
+	@RequestMapping("/shoesbox")
+	public String shoesbox(Model model) {
+		List<Shoes> shoesList = shoesService.findAll();
+		model.addAttribute("shoesList", shoesList);
+		
+		return "shoesbox";
 	}
 	
 	@RequestMapping("/shoesDetail")

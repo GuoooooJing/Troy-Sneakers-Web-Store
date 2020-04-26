@@ -19,12 +19,12 @@
 		</div>
 		<hr />
 		
-		<form th:action=@{/shoppingCart/addItem} method="post">
+		<form th:action=@{/shoppingCart/additem} method="post">
 			<input hidden="hidden" th:field="*{shoes.id}"/>
 			<div class="row" style="margin-top:50px;">
 				<div class="col-3">
 					<a th:href="@{/shoesbox}">Back to browse the shoes</a><br/>
-					<img class="img-responsive box-shoes" th:src="#{adminPath}+@{/imgs/shoes/}+${shoes.id}+'.png'"/>
+					<img class="img-fluid box-shoes" th:src="#{adminPath}+@{/imgs/shoes/}+${shoes.id}+'.png'"/>
 				</div>
 				<div class="col-9">
 					<h3 th:text="${shoes.model}">Shoes Model</h3>
@@ -37,8 +37,8 @@
 							
 						</div>
 						<div class="col-7">
-							<div class="panel panel-default" style="border-width:5px; margin-top:20px;">
-								<div class="panel-body">
+							<div class="card card-default" style="border-width:5px;">
+								<div class="card-body">
 									<div class="row">
 										<div class="col-6">
 											<h4>Our price: <span style="color:#db3208;">$</span><span th:text="${shoes.ourPrice}"></span></h4>
@@ -69,7 +69,7 @@
 										<div class="col-6">
 											<h4 th:if="*{shoes.inStockNumber&gt;10}" style="color:green;">In Stock</h4>
 											<h4 th:if="*{shoes.inStockNumber == 0}" style="color:red;">Out of Stock</h4>
-											<button type="submit" class="btn btn-warning" style="color:back; border:1px solid black; padding: 10px 40px 10px 40px;">Add to Cart</button>
+											<button type="submit" class="btn btn-warning" style="color:black; border:1px solid black; padding: 10px 40px 10px 40px;">Add to Cart</button>
 										</div>
 									</div>
 								</div>

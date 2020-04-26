@@ -1,13 +1,18 @@
 package com.troyshoes.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Shoes {
@@ -31,6 +36,10 @@ public class Shoes {
 	
 	@Transient
 	private MultipartFile shoesImage;
+	
+	@OneToMany(mappedBy = "shoes")
+	@JsonIgnore
+	private List<ShoesToCartItem> shoesToCartItemList;
 
 	public Long getId() {
 		return id;
@@ -142,5 +151,13 @@ public class Shoes {
 
 	public void setShoesImage(MultipartFile shoesImage) {
 		this.shoesImage = shoesImage;
+	}
+
+	public List<ShoesToCartItem> getShoesToCartItemList() {
+		return shoesToCartItemList;
+	}
+
+	public void setShoesToCartItemList(List<ShoesToCartItem> shoesToCartItemList) {
+		this.shoesToCartItemList = shoesToCartItemList;
 	}
 }

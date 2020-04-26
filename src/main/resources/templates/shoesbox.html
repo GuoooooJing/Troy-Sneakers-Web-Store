@@ -29,18 +29,18 @@
 					<tbody>
 						<tr class="shoes-item" data-th-each="shoes : ${shoesList}">
 							<td>
+							<br />
 								<div th:if="${shoes != null}">
 									<div class="row">
 										<div class="col-3">
-											<a th:href="@{/shoesDetail?id=}+${shoes.id}"><img class="img-responsive box-shoes" th:src="#{adminPath}+@{/imgs/shoes/}+${shoes.id}+'.png'"/></a>
+											<a th:href="@{/shoesDetail?id=}+${shoes.id}"><img class="img-fluid box-shoes" th:src="#{adminPath}+@{/imgs/shoes/}+${shoes.id}+'.png'"/></a>
 																						 
 										</div>
 										<div class="col-9">
 											<a th:href="@{/shoesDetail?id=}+${shoes.id}"><h4 th:text="${shoes.Model}"></h4></a>
 											<span th:text="${shoes.LaunchDate}"></span>
-											<span th:text="${shoes.Brand}"></span>
-											<span th:text="${#strings.capitalize(shoes.Style)}"></span>
-											<span th:text="${shoes.shippingWeight}"><span> pages</span></span>
+											<p th:text="${shoes.Brand}"></p>
+											<p th:text="${#strings.capitalize(shoes.Style)}"></p>
 											<span style="font-size:x-large;color:#db3208;">$<span th:text="${#numbers.formatDecimal(shoes.ourPrice, 0,'COMMA',2,'POINT')}"></span></span>
 											<span style="text-decoration:line-through;">$<span th:text="${#numbers.formatDecimal(shoes.listPrice, 0,'COMMA',2,'POINT')}" ></span></span>
 											
